@@ -1,22 +1,14 @@
 import React from 'react';
+import { actions } from '../store/actions';
+
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foo:'bar'
-    }
-  }
-
-  handleChange = () => {
-    this.setState({foo:Math.random()});
-  }
-
   render() {
     return (
-      <div onClick={this.handleChange}>
-        {this.state.foo}
-      </div>
+      <>
+        <div>{this.props.foo}</div>
+        <button onClick={() => this.props.handleChange()}></button>
+      </>
     );
   }
 }
